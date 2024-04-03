@@ -19,8 +19,8 @@ searchForm.addEventListener('submit', e => {
   query = e.target.elements.query.value.trim();
   if (!query) {
     iziToast.error({
+      title: 'Error',
       message: 'Sorry, please write correct query!',
-      messageColor: 'white',
       position: 'topRight',
     });
     return;
