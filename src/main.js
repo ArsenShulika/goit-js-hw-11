@@ -18,15 +18,14 @@ searchForm.addEventListener('submit', e => {
   e.preventDefault();
   query = e.target.elements.query.value.trim();
   if (!query) {
-    iziToast.show({
-      message:
-        'Sorry, there are no images matching your search query. Please try again!',
-      backgroundColor: 'red',
+    iziToast.error({
+      message: 'Sorry, please write correct query!',
       messageColor: 'white',
-      position: 'topCenter',
+      position: 'topRight',
     });
     return;
   }
+
   showLoader();
 
   getImages(query)
